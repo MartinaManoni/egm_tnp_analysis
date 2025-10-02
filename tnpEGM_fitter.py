@@ -209,8 +209,8 @@ if args.sumUp:
         'tagSel'      : None
         }
 
-    if not tnpConf.samplesDef['mcAlt' ] is None:
-       info['mcAlt'    ] = tnpConf.samplesDef['mcAlt' ].histFile
+    #if not tnpConf.samplesDef['mcAlt' ] is None:
+       #info['mcAlt'    ] = tnpConf.samplesDef['mcAlt' ].histFile
     # if not tnpConf.samplesDef['tagSel'] is None:
     #     info['tagSel'   ] = tnpConf.samplesDef['tagSel'].histFile
 

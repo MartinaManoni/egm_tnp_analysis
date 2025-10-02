@@ -211,10 +211,10 @@ Run3_2022 = {
         }
 
 Run3_2023 = {
-        'DYto2L-4Jets_madgraph_preBPix'    : tnpSample('', eos_marti + 'TnPTree_DYJetsToLL_M-50_TuneCP5_13p6TeV-madgraphMLM-pythia8_2022_DY_LO_postEE.root', isMC=True, nEvts = -1),
-        'DYto2L-4Jets_madgraph_postBPix'    : tnpSample('', eos_marti + 'TnPTree_DYJetsToLL_M-50_TuneCP5_13p6TeV-madgraphMLM-pythia8_2022_DY_LO_postEE.root', isMC=True, nEvts = -1),
-        'data_Run2023C': tnpSample('data_Run2023C', eos_Reco_Run3_PromptReco + '/TnPTree_EGamma_2022_Run2022E.root', lumi = 17.794),
-        'data_Run2023D': tnpSample('data_Run2023D', eos_Reco_Run3_PromptReco + '/TnPTree_EGamma_2022_Run2022F.root', lumi = 9.451)
+        'DYpreBPix'    : tnpSample('DYpreBPix', eos_marti + '/TnPTree_2023MCpreBPix.root', isMC=True, nEvts = -1),
+        'DYpostBPix'    : tnpSample('DYpostBPix', eos_marti + '/TnPTree_2023MCpostBPix.root', isMC=True, nEvts = -1),
+        'data_Run2023C': tnpSample('data_Run2023C', eos_marti + '/TnPTree_2023DataC.root', lumi = 17.794),
+        'data_Run2023D': tnpSample('data_Run2023D', eos_marti + '/TnPTree_2023DataD.root', lumi = 9.451)
         }
 
 # TEST with Andro's samples
