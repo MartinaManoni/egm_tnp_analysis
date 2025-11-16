@@ -25,7 +25,7 @@ eos_Run3_PromptReco = '/eos/cms/store/group/phys_egamma/tnpTuples/bjoshi/2023-04
 eos_Reco_Run3_PromptReco = '/eos/cms/store/group/phys_egamma/tnpTuples/bjoshi/2023-05-01/2022/data/'
 eos_Reco_Run3_124X = '/eos/cms/store/group/phys_egamma/tnpTuples/bjoshi/2023-02-09/2022/mc/'
 
-eos_marti = '/eos/user/m/mmanoni/Final_TnpNtuples/'
+eos_marti = '/eos/user/m/mmanoni/2023_tnp_UL18Ntuples/'
 ReReco2017 = {
 
     'DY_madgraph'              : tnpSample('DY_madgraph',
@@ -198,28 +198,9 @@ Run3_Reco_124X_PromptReco_postEE = {
         'data_Run2022G': tnpSample('data_Run2022G', eos_Reco_Run3_PromptReco + '/TnPTree_EGamma_2022_Run2022G.root', lumi = 3.1219)
         }
 
-# Martina samples 2022+2023 #TODO: Complete this section, for now working only for 2022postEE
-Run3_2022 = {
-        #'DYpreEE'    : tnpSample('', eos_marti + 'TnPTree_DYJetsToLL_M-50_TuneCP5_13p6TeV-madgraphMLM-pythia8_2022_DY_LO_postEE.root', isMC=True, nEvts = -1),
-        'DYpostEE22'    : tnpSample('DYpostEE22', eos_marti + '/2022postEE/TnPTree_2022postEE.root', isMC=True, nEvts = -1),
-        #'data_Run2022C': tnpSample('data_Run2022C', eos_Reco_Run3_PromptReco + '/TnPTree_EGamma_2022_Run2022E.root', lumi = 5.0104),
-        #'data_Run2022D': tnpSample('data_Run2022D', eos_Reco_Run3_PromptReco + '/TnPTree_EGamma_2022_Run2022F.root', lumi = 2.9700),
-        #'data_Run2022E': tnpSample('data_Run2022E', eos_Reco_Run3_PromptReco + '/TnPTree_EGamma_2022_Run2022E.root', lumi = 5.8070),
-        'data_Run2022F': tnpSample('data_Run2022F', eos_marti + '/2022DataFG/2022DataF.root', lumi = 17.7819),
-        'data_Run2022G': tnpSample('data_Run2022G', eos_marti + '/2022DataFG/2022DataG.root', lumi = 3.0828)
-
-        }
-
 Run3_2023 = {
-        'DYpreBPix'    : tnpSample('DYpreBPix', eos_marti + '/TnPTree_2023MCpreBPix.root', isMC=True, nEvts = -1),
-        'DYpostBPix'    : tnpSample('DYpostBPix', eos_marti + '/TnPTree_2023MCpostBPix.root', isMC=True, nEvts = -1),
-        'data_Run2023C': tnpSample('data_Run2023C', eos_marti + '/TnPTree_2023DataC.root', lumi = 17.794),
-        'data_Run2023D': tnpSample('data_Run2023D', eos_marti + '/TnPTree_2023DataD.root', lumi = 9.451)
-        }
-
-# TEST with Andro's samples
-Run3_Andro = {
-        'DYpreEE'    : tnpSample('DYpreEE', eos_marti + 'DY_madgraph_preEE.root', isMC=True, nEvts = -1),
-        'data_Run3C': tnpSample('data_Run3C', eos_marti + '/Run2022C_merged.root', lumi = 5.0104),
-        'data_Run3D': tnpSample('data_Run3D', eos_marti + '/Run2022D_merged.root', lumi = 2.9700)
+        'DYpreBPix'    : tnpSample('DYpreBPix', eos_marti + '/MC_2023preBPix_NLO_DYto2L-2Jets.root', isMC=True, nEvts = -1),
+        'DYpostBPix'    : tnpSample('DYpostBPix', eos_marti + '/MC_2023postBPix_NLO_DYto2L-2Jets.root', isMC=True, nEvts = -1),
+        'data_Run2023C': tnpSample('data_Run2023C', eos_marti + '/EGamma_preBPix2023_tot.root', lumi = 18.063),
+        'data_Run2023D': tnpSample('data_Run2023D', eos_marti + '/EGamma_postBPix2023_tot.root', lumi = 9.693)
         }
