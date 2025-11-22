@@ -19,13 +19,22 @@ eosUL2018 = '/eos/cms/store/group/phys_egamma/tnpTuples/tomc/2020-05-20/UL2018/m
 
 #Run3
 eosRun3 = '/eos/cms/store/group/phys_egamma/ec/fmausolf/EGM_comm/'
+eosRun3_2024 = '/eos/cms/store/group/phys_egamma/ochando/'
+
+eosRun3_2025data = '/eos/cms/store/group/phys_egamma/ec/tnpTuples/Prompt2025/2025-09-13/2025/data/'
+eosRun3_2025mc   = '/eos/cms/store/group/phys_egamma/ochando/tnpTuples/2025/'
+
+eosRun3_2024ID = '/eos/cms/store/group/phys_egamma/ochando/tnpTuples/2024id/'
+
+#/eos/cms/store/group/phys_egamma/ochando/tnpTuples/2025/TnPTree_mc_2025_DYto2E.root
+    #/eos/cms/store/group/phys_egamma/ec/tnpTuples/Prompt2025/2025-09-13/2025/data/TnPTree_data_2025E.root
 
 eos_Run3_124X = '/eos/cms/store/group/phys_egamma/tnpTuples/bjoshi/2023-04-25/2022/'
 eos_Run3_PromptReco = '/eos/cms/store/group/phys_egamma/tnpTuples/bjoshi/2023-04-25/2022/'
 eos_Reco_Run3_PromptReco = '/eos/cms/store/group/phys_egamma/tnpTuples/bjoshi/2023-05-01/2022/data/'
 eos_Reco_Run3_124X = '/eos/cms/store/group/phys_egamma/tnpTuples/bjoshi/2023-02-09/2022/mc/'
 
-eos_marti = '/eos/user/m/mmanoni/2023_tnp_UL18Ntuples/'
+
 ReReco2017 = {
 
     'DY_madgraph'              : tnpSample('DY_madgraph',
@@ -168,6 +177,32 @@ Run3 = {
 }
 
 
+Run3_2024 = {
+    'DY_amcatnlo' : tnpSample('DY_amcatnlo', eosRun3_2024 + 'TnPTree_mc_2024_DYToE-2jets.root',isMC = True, nEvts =  -1 ),
+    'data_Run2024B' : tnpSample('data_Run2024B' , eosRun3_2024 + 'TnPTree_data_2024B.root' , lumi = 0.13),
+    'data_Run2024CDERepro' : tnpSample('data_Run2024CDERepro' , eosRun3_2024 + 'TnPTree_data_2024CDERepro.root' , lumi = 26.52),  #26.52), #7.24==2024C only
+    'data_Run2024F' : tnpSample('data_Run2024F' , eosRun3_2024 + 'TnPTree_data_2024F.root' , lumi = 65.53), #27.76
+    'data_Run2024H' : tnpSample('data_Run2024H' , eosRun3_2024 + 'TnPTree_data_2024H.root' , lumi = 5.44),
+    'data_Run2024I' : tnpSample('data_Run2024I' , eosRun3_2024 + 'TnPTree_data_2024I.root' , lumi = 11.47),
+
+    }
+
+
+Run3_2024ID = {
+    'DYto2E' : tnpSample('DYto2E', eosRun3_2024ID + 'DYto2E_2024.root', isMC = True, nEvts = -1),
+    'data_Run2024' : tnpSample('data_Run2024', eosRun3_2024ID + 'EGamma_2024.root', lumi = 109.0),
+ 
+
+}
+
+Run3_2025 = {
+    'DYto2E' : tnpSample('DYto2E', eosRun3_2025mc + 'TnPTree_mc_2025_DYto2E.root', isMC = True, nEvts = -1),
+    'data_Run2025E' : tnpSample('data_Run2025E', eosRun3_2025data + 'TnPTree_data_2025E.root', lumi = 14.0),
+    #/eos/cms/store/group/phys_egamma/ochando/tnpTuples/2025/TnPTree_mc_2025_DYto2E.root
+    #/eos/cms/store/group/phys_egamma/ec/tnpTuples/Prompt2025/2025-09-13/2025/data/TnPTree_data_2025E.root
+
+
+}
 
 Run3_124X_PromptReco2022F = {
         'DY_1j_madgraph_postEE'    : tnpSample('DY_1j_madgraph_postEE', eos_Run3_124X + '/mc/TnPTree_DYJetsToLL_M-50_TuneCP5_13p6TeV-madgraphMLM-pythia8_2022_DY_LO_postEE.root', isMC=True, nEvts = 96505000),
@@ -198,9 +233,3 @@ Run3_Reco_124X_PromptReco_postEE = {
         'data_Run2022G': tnpSample('data_Run2022G', eos_Reco_Run3_PromptReco + '/TnPTree_EGamma_2022_Run2022G.root', lumi = 3.1219)
         }
 
-Run3_2023 = {
-        'DYpreBPix'    : tnpSample('DYpreBPix', eos_marti + '/MC_2023preBPix_NLO_DYto2L-2Jets.root', isMC=True, nEvts = -1),
-        'DYpostBPix'    : tnpSample('DYpostBPix', eos_marti + '/MC_2023postBPix_NLO_DYto2L-2Jets.root', isMC=True, nEvts = -1),
-        'data_Run2023C': tnpSample('data_Run2023C', eos_marti + '/EGamma_preBPix2023_tot.root', lumi = 18.063),
-        'data_Run2023D': tnpSample('data_Run2023D', eos_marti + '/EGamma_postBPix2023_tot.root', lumi = 9.693)
-        }

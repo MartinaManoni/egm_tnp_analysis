@@ -46,7 +46,7 @@ def createWorkspaceForAltSig( sample, tnpBin, tnpWorkspaceParam ):
     fitresP = filemc.Get( '%s_resP' % tnpBin['name']  )
     fitresF = filemc.Get( '%s_resF' % tnpBin['name'] )
 
-    listOfParam = ['nF','alphaF','nP','alphaP','sigmaP','sigmaF','sigmaP_2','sigmaF_2','meanGF','sigmaGF', 'sigFracF']
+    listOfParam = ['nF','alphaF','nP','alphaP','sigmaP','sigmaF','sigmaP_2','sigmaF_2','meanGF','sigmaGF', 'sigFracF', 'alphaPP', 'alphaFF', 'alphaP2', 'alphaF2']
     
     fitPar = fitresF.floatParsFinal()
     for ipar in range(len(fitPar)):
@@ -86,10 +86,14 @@ def histFitterNominal( sample, tnpBin, tnpWorkspaceParam ):
     tnpWorkspaceFunc = [
         "Gaussian::sigResPass(x,meanP,sigmaP)",
         "Gaussian::sigResFail(x,meanF,sigmaF)",
-        "RooCMSShape::bkgPass(x, acmsP, betaP, gammaP, peakP)",
-        #"RooCMSShape::bkgFail(x, acmsF, betaF, gammaF, peakF)",
+        "RooCMSShape::bkgPass(x, acmsP, betaP, gammaP, peakP)",  # midpT
+        #"RooCMSShape::bkgFail(x, acmsF, betaF, gammaF, peakF)",  #midpT
+
         "Chebychev::bkgFail(x,{a0,a1,a2,a3})",
-        ]
+        
+        #"Bernstein::bkgFail(x, {a0, a1, a2, a3})", #low pT
+
+    ]
 
     tnpWorkspace = []
     tnpWorkspace.extend(tnpWorkspaceParam)
@@ -146,8 +150,12 @@ def histFitterAltSig( sample, tnpBin, tnpWorkspaceParam, isaddGaus=0 ):
         "RooCBExGaussShapeTNP::sigResPass(x,meanP,expr('sqrt(sigmaP*sigmaP+sosP*sosP)',{sigmaP,sosP}),alphaP,nP, expr('sqrt(sigmaP_2*sigmaP_2+sosP*sosP)',{sigmaP_2,sosP}),tailLeft)",
         "RooCBExGaussShapeTNP::sigResFail(x,meanF,expr('sqrt(sigmaF*sigmaF+sosF*sosF)',{sigmaF,sosF}),alphaF,nF, expr('sqrt(sigmaF_2*sigmaF_2+sosF*sosF)',{sigmaF_2,sosF}),tailLeft)",
         "RooCMSShape::bkgPass(x, acmsP, betaP, gammaP, peakP)",
-        "RooCMSShape::bkgFail(x, acmsF, betaF, gammaF, peakF)",
-       # "Chebychev::bkgFail(x,{a0,a1,a2,a3})", 
+        #"RooCMSShape::bkgFail(x, acmsF, betaF, gammaF, peakF)",
+
+        "Chebychev::bkgFail(x,{a0,a1,a2,a3})",
+
+        #"Chebychev::bkgFail(x,{a0,a1,a2,a3})",
+
         ]
     if isaddGaus==1:
         tnpWorkspaceFunc += [ "Gaussian::sigGaussFail(x,meanGF,sigmaGF)", ]
@@ -204,9 +212,10 @@ def histFitterAltBkg( sample, tnpBin, tnpWorkspaceParam ):
     tnpWorkspaceFunc = [
         "Gaussian::sigResPass(x,meanP,sigmaP)",
         "Gaussian::sigResFail(x,meanF,sigmaF)",
-        "Exponential::bkgPass(x, alphaP)",
-        "Exponential::bkgFail(x, alphaF)",
-        #"Gamma::bkgFail(x,a0,a1,a2)",
+        
+        "Exponential::bkgPass(x, alphaP)", #lowpT
+        "Exponential::bkgFail(x, alphaF)", #lowp
+        #"Bernstein::bkgFail(x, {a0, a1, a2, a3})", #>75, midpT
         ]
 
     tnpWorkspace = []
@@ -259,9 +268,11 @@ def histFitterAltSigBkg( sample, tnpBin, tnpWorkspaceParam):
         "tailLeft[1]",
         "RooCBExGaussShapeTNP::sigResPass(x,meanP,expr('sqrt(sigmaP*sigmaP+sosP*sosP)',{sigmaP,sosP}),alphaP,nP, expr('sqrt(sigmaP_2*sigmaP_2+sosP*sosP)',{sigmaP_2,sosP}),tailLeft)",
         "RooCBExGaussShapeTNP::sigResFail(x,meanF,expr('sqrt(sigmaF*sigmaF+sosF*sosF)',{sigmaF,sosF}),alphaF,nF, expr('sqrt(sigmaF_2*sigmaF_2+sosF*sosF)',{sigmaF_2,sosF}),tailLeft)",
+
         "Exponential::bkgPass(x, alphaP_2)",
         #"Exponential::bkgFail(x, alphaF_2)",
-        "Gamma::bkgFail(x,a0,a1,a2)",
+        #"Bernstein::bkgPass(x, {a0P, a1P, a2P, a3P})",
+        "Bernstein::bkgFail(x, {a0, a1, a2, a3})",
         ]
 
     tnpWorkspace = []
