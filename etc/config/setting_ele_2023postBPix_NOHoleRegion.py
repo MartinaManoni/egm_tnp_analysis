@@ -22,7 +22,7 @@ flags = {
     'passingMVASummer18ULwpHZZ_sipdzdxy' : '(passingMVASummer18ULwpHZZ == 1 && fabs(el_sip) < 4 && fabs(el_dz) < 1 && fabs(el_dxy) < 0.5)',#Using this 
     }
 
-baseOutDir = '/eos/user/m/mmanoni/Tnp_results_2023postBPix_NO_HOLE_REGION_NEW/hzzSummer18UL/2023preBPixResults_sipdzdxy_el3charge_cut60'
+baseOutDir = '/eos/user/m/mmanoni/Tnp_results_2023postBPix_NO_HOLE_REGION/hzzSummer18UL/2023preBPixResults_sipdzdxy_el3charge_cut60'
 
 #############################################################
 ########## samples definition  - preparing the samples
@@ -111,11 +111,18 @@ additionalCuts = {
 ########## fitting params to tune fit by hand if necessary
 #############################################################
 tnpParNomFit = [
-    "meanP[-0.0,-2.0,2.0]","sigmaP[0.9,0.5,5.0]",
-    "meanF[-0.0,-5.0,5.0]","sigmaF[0.9,0.5,5.0]", 
+    #"meanP[-0.0,-2.0,2.0]","sigmaP[0.9,0.5,5.0]",
+    #"meanF[-0.0,-5.0,5.0]","sigmaF[0.9,0.5,5.0]", 
+    #"meanP[-0.0,-2.0,2.0]","sigmaP[4.5,4.,6.0]", #bin2/7
+    "meanP[-0.0,-2.0,2.0]","sigmaP[2.,2.,3.0]", #bin 12
+    "meanF[-0.0,-5.0,5.0]","sigmaF[2.,2.,3.0]", #bin 2/7
     "acmsP[60.,50.,80.]","betaP[0.05,0.01,0.08]","gammaP[0.5, -2, 2]","peakP[90.0]",
     #"acmsF[60.,50.,80.]","betaF[0.05,0.01,0.08]","gammaF[0.5, -2, 2]","peakF[90.0]",
-    "{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.02,0.02],a3[0, -0.02, 0.02]}", #bin 1/2/3/4/5/6/7
+    #"{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.022,-0.02],a3[0, -0.02, 0.02]}", #bin 2/7
+
+    "{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.019,-0.02],a3[0, -0.02, 0.02]}", #bin 12
+
+    #"{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.05,0.05],a3[0, -0.02, 0.02]}", #bin 1/2/3/4/5/6/7
     ]
 
 #general
@@ -124,9 +131,10 @@ tnpParAltSigFit = [
     "meanP[-0.0,-2.0,5.0]","sigmaP[1,0.7,6.0]","alphaP[2.0,1.2,3.5]" ,'nP[3,-5,5]',"sigmaP_2[1.5,0.5,6.0]","sosP[1,0.5,5.0]", #"meanP[-0.0,-4.0,5.0] bin 1
     "meanF[-0.0,-3.0,5.0]","sigmaF[0.5,0.7,6.0]","alphaF[2.0,1.2,3.5]",'nF[3,-5,5]',"sigmaF_2[2.0,0.5,6.0]","sosF[1,0.5,5.0]",
     "acmsP[60.,50.,75.]","betaP[0.04,0.01,0.04]","gammaP[0.1, 0.005, 1.0]","peakP[90.0]", #bin 22/27 betaP[0.04,0.01,0.2]
-    "acmsF[40.,50.,90.]","betaF[0.04,0.01,0.06]","gammaF[0.1, 0.005, 1.0]","peakF[90.0]", # bin 8 betaF[0.04,0.01,0.08] bin 9 betaF[0.04,0.01,0.09]" --- bin 40/41/49  "acmsF[40.,50.,90.]",
+    #"acmsF[40.,50.,90.]","betaF[0.04,0.01,0.06]","gammaF[0.1, 0.005, 1.0]","peakF[90.0]", # bin 8 betaF[0.04,0.01,0.08] bin 9 betaF[0.04,0.01,0.09]" --- bin 40/41/49  "acmsF[40.,50.,90.]",
     #"{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.05,0.05],a3[0, -0.1, 0.1]}", #bin 0/2/3
-    #"{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.05,0.05],a3[0, -0.5, 0.5]}", #bin 0-7
+    "{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.02,-0.019],a3[0, -0.1, 0.1]}", #bin 2
+   #"{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.05,0.05],a3[0, -0.5, 0.5]}", #bin 0-7
     ]
 
 tnpParAltSigFit_addGaus = [
