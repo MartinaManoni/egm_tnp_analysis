@@ -28,7 +28,7 @@ flags = {
     }
 
 #
-baseOutDir = '/eos/user/m/mmanoni/Tnp_results_2024/hzzWinter22/2024Results/'
+baseOutDir = '/eos/user/m/mmanoni/Tnp_results_2024_COPY/hzzWinter22/2024Results/'
 #baseOutDir = 'results/Run3_2024ID/tnpEleIDs'
 
 #############################################################
@@ -144,12 +144,12 @@ cutBase = 'tag_Ele_pt > 35 && abs(tag_sc_eta) < 2.17 && tag_Ele_Iso122X > 0.9 &&
 additionalCuts = { 
     0 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60 ',
     1 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60 ',
-    2 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60 ',
+    2 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45 ',
     3 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60 ',
     4 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60 ',
     5 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60 ',
     6 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60 ',
-    7 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60 ',
+    7 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45 ',
     8 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60 ',
     9 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60 ',
 }
@@ -217,10 +217,11 @@ tnpParAltSigFit = [
    
 
     #--Cheb
-  # "{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.02,0.02],a3[0, -0.2, 0.2]}",#bin 0/1/3
+   #"{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.02,0.02],a3[0, -0.2, 0.2]}",#bin 0/1/3
    
    #"{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.1,0.1],a3[0, -0.2, 0.2]}",#bin 4
-   #"{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.1,0.1],a3[0, -0.2, 0.2]}",#bin 5
+   "{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.1,0.1],a3[0, -0.2, 0.2]}",#bin 5
+   
    #"{a0[-1.0,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.04,0.04],a3[0, -0.2, 0.2]}",#bin 6/7
         #"{a0[-1.0,-1.5,-0.2],a1[0.,-0.5,0.5],a2[0.,-0.03,0.03],a3[0, -0.2, 0.2]}",#bin 8/9/15/16
         #"{a0[-0.5,-2.0, 0.5],a1[0.,-0.7,0.7],a2[0.,-0.02,0.02],a3[0, -0.1, 0.1]}",#bin 8/9/13/14
@@ -229,7 +230,7 @@ tnpParAltSigFit = [
 
     #"{a0[-0.9,-1.5,-0.2],a1[0.,-0.5,0.5],a2[0.,-0.9,0.9],a3[0, -0.5, 0.5]}",#bin 23-28
 
-    "{a0[-0.9,-1.5,-0.2],a1[0.,-0.5,0.5],a2[0.,-1.0,1.0],a3[0, -0.1, 0.1]}",#bin  20/21/22/29
+    #"{a0[-0.9,-1.5,-0.2],a1[0.,-0.5,0.5],a2[0.,-1.0,1.0],a3[0, -0.1, 0.1]}",#bin  20/21/22/29
 
     ]
 
@@ -261,7 +262,7 @@ tnpParAltSigBkgFit = [
 
     "meanP[-0.5,-5.0,5.0]","sigmaP[3,0.7,6.0]","alphaP[0.5,0.,5.5]" ,'nP[2,-5,5]',"sigmaP_2[0.1,0.,6.0]","sosP[0.02,0.,5.0]",
     #"meanF[-0.0,-5.0,5.0]","sigmaF[2,0.7,15.0]","alphaF[2.0,1.2,3.5]",'nF[3,-5,5]',"sigmaF_2[2.0,0.5,6.0]","sosF[1,0.5,5.0]",
-    "meanF[-0.0,-5.0,5.0]","sigmaF[2,0.7,15.0]","alphaF[2.0,1.2,3.5]",'nF[3,-5,5]',"sigmaF_2[2.0,0.5,6.0]","sosF[1,0.5,5.0]",
+    "meanF[-0.0,-5.0,5.0]","sigmaF[5.,5.,20.0]","alphaF[2.0,1.2,3.5]",'nF[3,-5,5]',"sigmaF_2[2.0,0.5,6.0]","sosF[1,0.5,5.0]",
 
     # --- Exponential
     "alphaP_2[0.,-5.,5.]",
@@ -272,9 +273,13 @@ tnpParAltSigBkgFit = [
     # --- Bernstein LOW PT
 
     #"a0[5., 1., 15.]", "a1[2., 0., 3.]", "a2[0.2, -0.5, 2.]", "a3[0.3, -0., 3.]",  #bin 0/3/4/5 8/9
+
+    #"a0[2., 1., 3.]", "a1[1., 0., 2.]", "a2[0.2, -0.5, 1.]", "a3[0.3, -0., 3.]",
+
+    "a0[12., 0.9., 15.]", "a1[2., 0., 3.]", "a2[0.1, -0., 1.]", "a3[0.3, -0., 3.]", #bin 7 (PROVA)
     
     #"a0[12., 1., 15.]", "a1[2, 0., 2.]", "a2[0.3, -0.5, 1.5]", "a3[0.3, -0., 3.]", #bin 2
-    #"a0[12., 1., 15.]", "a1[2, 0., 3.]", "a2[0.5., -0., 1.]", "a3[0.3, -0., 3.]", #bin 7
+   #"a0[12., 1., 15.]", "a1[2, 0., 3.]", "a2[0.5., -0., 1.]", "a3[0.3, -0., 3.]", #bin 7
     
     
     #"a0[5., 1., 20.]", "a1[2., 0., 3.]", "a2[0.2, -0., 0.5]", "a3[0.3, -0., 3.]",  #bin 0/3/4/5 8/9 13/14/15/16 OK
@@ -286,7 +291,7 @@ tnpParAltSigBkgFit = [
     #"a0[1., -1., 3.]", "a1[1., -1., 2.]", "a2[0.2, -1, 2.]", "a3[0.3, -1., 0.5.]",
 
     #"a0[5., 4., 7.]", "a1[2., 0., 3.]", "a2[0.2, -0.7, 0.7]", "a3[0.3, -0.5, 0.5]",  #bin 0/3/4/5 8/9 13/14/15/16 OK
-    #"a0[5., 1., 20.]", "a1[2., 0., 3.]", "a2[0.2, -0., 1.0]", "a3[0.3, -0., 3.]", #bin 16 OK
+    #"a0[5., 5., 20.]", "a1[2., 0., 3.]", "a2[0.2, -0., 1.0]", "a3[0.3, -0., 3.]", #bin 16 OK
 
 
 
@@ -305,7 +310,7 @@ tnpParAltSigBkgFit = [
 
     #"a0[4.9, 4.85, 4.95]", "a1[2.,1.95, 2.05]", "a2[2.15, 2.145, 2.151]", "a3[1.54, 1.50, 1.55]", #bin 9 OK
 
-    "a0[4.80, 4.7, 4.9]", "a1[1.2, 1.15, 1.3]", "a2[2.7, 2.65, 2.8]", "a3[0.6, 0.55,0.7]", #bin 7
+    #"a0[4.80, 4.7, 4.9]", "a1[1.2, 1.15, 1.3]", "a2[2.7, 2.65, 2.8]", "a3[0.6, 0.55,0.7]", #bin 7
 
     #"a0[4.99]", "a1[1.]", "a2[2.]", "a3[0.1]", #bin 6
 
