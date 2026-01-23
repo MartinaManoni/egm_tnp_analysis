@@ -22,7 +22,7 @@ flags = {
     'passingMVASummer18ULwpHZZ_sipdzdxy' : '(passingMVASummer18ULwpHZZ == 1 && fabs(el_sip) < 4 && fabs(el_dz) < 1 && fabs(el_dxy) < 0.5)',#Using this 
     }
 
-baseOutDir = '/eos/user/m/mmanoni/Tnp_results_2023postBPix_NO_HOLE_REGION/hzzSummer18UL/2023preBPixResults_sipdzdxy_el3charge_cut60'
+baseOutDir = '/eos/user/m/mmanoni/Tnp_results_2023postBPix_NO_HOLE_REGION_PROVA/hzzSummer18UL/2023preBPixResults_sipdzdxy_el3charge_cut60'
 
 #############################################################
 ########## samples definition  - preparing the samples
@@ -90,16 +90,16 @@ cutBase   = 'tag_Ele_pt > 35 && abs(tag_sc_eta) < 2.17 && el_q*tag_Ele_q < 0 && 
 #&& el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60
 #el_3charge==1
 additionalCuts = { 
-    0 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  60',
-    1 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  60',
-    2 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  60',
-    3 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  60',
-    4 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  60',
-    5 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  60',
-    6 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  60',
-    7 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  60',
-    8 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  60',
-    9 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  60',
+    0 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  45',
+    1 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  45',
+    2 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  45',
+    3 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  45',
+    4 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  45',
+    5 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  45',
+    6 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  45',
+    7 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  45',
+    8 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  45',
+    9 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) <  45',
 }
 
 #transverse mass cut (WW)
@@ -114,8 +114,8 @@ tnpParNomFit = [
     #"meanP[-0.0,-2.0,2.0]","sigmaP[0.9,0.5,5.0]",
     #"meanF[-0.0,-5.0,5.0]","sigmaF[0.9,0.5,5.0]", 
     #"meanP[-0.0,-2.0,2.0]","sigmaP[4.5,4.,6.0]", #bin2/7
-    "meanP[-0.0,-2.0,2.0]","sigmaP[2.,2.,3.0]", #bin 12
-    "meanF[-0.0,-5.0,5.0]","sigmaF[2.,2.,3.0]", #bin 2/7
+    "meanP[-0.0,-2.0,2.0]","sigmaP[2.,2.,5.0]", #bin 12
+    "meanF[-0.0,-5.0,5.0]","sigmaF[2.,2.,5.0]", #bin 2/7
     "acmsP[60.,50.,80.]","betaP[0.05,0.01,0.08]","gammaP[0.5, -2, 2]","peakP[90.0]",
     #"acmsF[60.,50.,80.]","betaF[0.05,0.01,0.08]","gammaF[0.5, -2, 2]","peakF[90.0]",
     #"{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.022,-0.02],a3[0, -0.02, 0.02]}", #bin 2/7
@@ -123,9 +123,9 @@ tnpParNomFit = [
     #"{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.019,-0.02],a3[0, -0.02, 0.02]}", #bin 12
 
     #"{a0[-0.9,-1.5,-0.1],a1[0.,-0.5,0.5],a2[0.,-0.5,-0.02],a3[0, -0.02, 0.02]}", #bin 12
-    "{a0[-0.9,-1.5,-0.2],a1[0.,-0.5,0.5],a2[0.,-0.09,0.09],a3[0, -0.5, 0.5]}"
+    #"{a0[-0.9,-1.5,-0.2],a1[0.,-0.5,0.5],a2[0.,-0.09,0.09],a3[0, -0.5, 0.5]}"
 
-    #"{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.05,0.05],a3[0, -0.02, 0.02]}", #bin 1/2/3/4/5/6/7
+    "{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.05,0.05],a3[0, -0.02, 0.02]}", #bin 1/2/3/4/5/6/7
     ]
 
 #general

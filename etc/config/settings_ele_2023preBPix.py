@@ -22,7 +22,7 @@ flags = {
     'passingMVASummer18ULwpHZZ_sipdzdxy' : '(passingMVASummer18ULwpHZZ == 1 && fabs(el_sip) < 4 && fabs(el_dz) < 1 && fabs(el_dxy) < 0.5)',#Using this 
     }
 
-baseOutDir = '/eos/user/m/mmanoni/Tnp_results_2023preBPix/hzzSummer18UL/2023preBPixResults_sipdzdxy_el3charge_cut60'
+baseOutDir = '/eos/user/m/mmanoni/Tnp_results_2023preBPix_PROVA/hzzSummer18UL/2023preBPixResults_sipdzdxy_el3charge_cut45'
 
 #############################################################
 ########## samples definition  - preparing the samples
@@ -90,16 +90,16 @@ cutBase   = 'tag_Ele_pt > 35 && abs(tag_sc_eta) < 2.17 && el_q*tag_Ele_q < 0'
 #&& el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60
 #el_3charge==1
 additionalCuts = { 
-    0 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60',
-    1 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60',
-    2 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60',
-    3 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60',
-    4 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60',
-    5 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60',
-    6 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60',
-    7 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60',
-    8 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60',
-    9 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 60',
+    0 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45',
+    1 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45',
+    2 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45',
+    3 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45',
+    4 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45',
+    5 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45',
+    6 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45',
+    7 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45',
+    8 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45',
+    9 : 'tag_Ele_pt > 50 && el_3charge==1 && sqrt(2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45',
 }
 
 #transverse mass cut (WW)
@@ -112,18 +112,18 @@ additionalCuts = {
 #############################################################
 tnpParNomFit = [
     #"meanP[-0.0,-2.0,2.0]","sigmaP[0.9,0.5,5.0]",
-    "meanF[-0.0,-5.0,5.0]","sigmaF[0.9,0.5,5.0]", # "meanF[-0.0,-5.0,5.0]","sigmaF[0.9,0.5,5.0]",
+   # "meanF[-0.0,-5.0,5.0]","sigmaF[0.9,0.5,5.0]", # "meanF[-0.0,-5.0,5.0]","sigmaF[0.9,0.5,5.0]",
 
-    "meanP[-0.0,-2.0,2.0]","sigmaP[3.1,3.0,5.0]", #bin 17
+    # "meanP[-0.0,-2.0,2.0]","sigmaP[3.1,3.0,5.0]", #bin 17
     #"meanF[-0.0,-5.0,5.0]","sigmaF[0.9,0.5,5.0]", #bin 17
 
-    #"meanP[-0.0,-2.0,2.0]","sigmaP[3.1,3.,5.0]", #bin 7 
-    #"meanF[-0.0,-5.0,5.0]","sigmaF[2.9,2.8,5.0]", # bin 7
+    "meanP[-0.0,-2.0,2.0]","sigmaP[3.1,3.,5.0]", #bin 7 
+    "meanF[-0.0,-5.0,5.0]","sigmaF[2.9,2.8,5.0]", # bin 7
 
     "acmsP[60.,50.,80.]","betaP[0.08,0.08,0.09]","gammaP[0.1, -2, 2]","peakP[90.0]",#20-29  betaP[0.05,0.01,0.2]
     #"acmsF[60.,50.,80.]","betaF[0.05,0.01,0.08]","gammaF[0.5, -2, 2]","peakF[90.0]",
 
-    #"{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.09,0.09],a3[0, -0.5, 0.5]}", #20/21 bins 0-2 4-5 a2[0.,-0.04,0.04], bin 3 a2[0.,-0.1,0.1] bin 6 a2[0.,-0.06,0.06], bin 7 a2[0.,-0.09,0.09] bin 14/15
+   # "{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.09,0.09],a3[0, -0.5, 0.5]}", #20/21 bins 0-2 4-5 a2[0.,-0.04,0.04], bin 3 a2[0.,-0.1,0.1] bin 6 a2[0.,-0.06,0.06], bin 7 a2[0.,-0.09,0.09] bin 14/15
     #"{a0[-0.9,-1.5,-0.2],a1[0.,-0.5,0.5],a2[0.,-0.09,0.09],a3[0, -0.5, 0.5]}",#22/23
     #"{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.08,0.08],a3[0., -0.1, 0.1]}",#27
     "a0[12., 0.5., 15.]", "a1[2., 0., 5.]", "a2[0.1, -0.9, 0.5]", "a3[0.3, -0., 3.]" #Bernstein 
@@ -189,7 +189,7 @@ tnpParAltSigFit = [
 
 tnpParAltSigFit = [
     "meanP[-0.0,-2.0,5.0]","sigmaP[1,0.7,6.0]","alphaP[2.0,1.2,3.5]" ,'nP[3,-5,5]',"sigmaP_2[1.5,0.5,6.0]","sosP[1,0.5,5.0]",
-    "meanF[-0.0,-2.0,5.0]","sigmaF[1,0.7,6.0]","alphaF[2.0,1.2,3.5]",'nF[3,-5,5]',"sigmaF_2[1.5,0.5,6.0]","sosF[1,0.5,5.0]",
+    "meanF[-0.0,-10.0,5.0]","sigmaF[1,0.7,15.0]","alphaF[2.0,1.2,3.5]",'nF[3,-5,5]',"sigmaF_2[1.5,0.5,6.0]","sosF[1,0.5,10.0]",
 
     "acmsP[60.,50.,75.]","betaP[0.04,0.001,0.1]","gammaP[0.1, 0.005, 1]","peakP[90.0]", #bin 22 betaP[0.04,0.001,0.1]
     #"{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.1,0.1],a3[0, -0.1, 0.1]}", #a2[0.,-0.1,0.1] bin 3 a2[0.,-0.2,0.2] bin 5 a2[0.,-0.05,0.05] bin 6 a2[0.,-0.1,0.1] bin 7
@@ -205,9 +205,10 @@ tnpParAltSigFit = [
     #"{a0[-0.9,-1.5,-0.5],a1[0.,-0.5,0.5],a2[0.,-0.09,0.09],a3[0, -0.5, 0.5]}",#24
     
     
-    #"a0[12., 0.5., 15.]", "a1[2., 0., 3.]", "a2[0.1, -0.9, 0.5]", "a3[0.3, -0., 3.]" #Bernstein bin 27
-    "a0[12., 0.1., 15.]", "a1[1., 0., 6.]", "a2[0.1, -0.9, 0.5]", "a3[0.3, -0., 3.]" #Bernstein bin 22
-    #"a0[0.548]", "a1[3.160]", "a2[-0.4]", "a3[0.356]" #Bernstein 
+    "a0[12., 0.5., 15.]", "a1[2., 0., 3.]", "a2[0.1, -0.9, 0.5]", "a3[0.3, -0., 3.]" #Bernstein bin 27
+    
+    #"a0[12., 0.1., 15.]", "a1[1., -0.5, 7.]", "a2[-0.3, -0.9, -0.2]", "a3[0.3, -0., 4.]" #Bernstein bin 22
+    #"a0[0.548]", "a1[3.160]", "a2[-0.595]", "a3[0.356]" #Bernstein 
 
     #"{a0[-0.5, -0.6, -0.2],a1[-0.077, -0.09, -0.06], a2[0.08, 0.07, 0.09],a3[-1.00, -1.1, -0.9]}",#27
     #"{a0[-0.9],a1[-0.23],a2[0.6],a3[0.03]}",#27

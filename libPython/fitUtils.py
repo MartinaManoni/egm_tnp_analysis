@@ -88,8 +88,8 @@ def histFitterNominal( sample, tnpBin, tnpWorkspaceParam ):
         "Gaussian::sigResFail(x,meanF,sigmaF)",
         "RooCMSShape::bkgPass(x, acmsP, betaP, gammaP, peakP)",
         #"RooCMSShape::bkgFail(x, acmsF, betaF, gammaF, peakF)",
-        #"Chebychev::bkgFail(x,{a0,a1,a2,a3})",
-        "Bernstein::bkgFail(x, {a0, a1, a2, a3})"
+        "Chebychev::bkgFail(x,{a0,a1,a2,a3})",
+        #"Bernstein::bkgFail(x, {a0, a1, a2, a3})"
         ]
 
     tnpWorkspace = []
