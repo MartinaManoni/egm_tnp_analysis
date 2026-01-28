@@ -312,6 +312,10 @@ class efficiencyList:
                         else:                        
                             averageMC   = (effPlus.effMC   + effMinus.effMC  )/2.
                         ### so this is h2D bin is inside the bining used by e/gamma POG
+                        if etaBin == (-1.444, 1.444):
+                            self.effList[ptBin][etaBin].systCombined = 1.0
+                            self.effList[ptBin][etaBin].mean         = 1.0
+
                         h2.SetBinContent(ix,iy, self.effList[ptBin][etaBin].mean      / self.effList[ptBin][etaBin].effMC)
                         h2.SetBinError  (ix,iy, self.effList[ptBin][etaBin].systCombined / self.effList[ptBin][etaBin].effMC )
                         if onlyError   == 0 :
@@ -428,14 +432,20 @@ class efficiencyList:
                     ### init average efficiency 
                     listOfGraphs[ptBin] = []
                 effAverage = self.effList[ptBin][etaBin]
-                aValue  = effAverage.mean
-                anError = effAverage.systCombined 
-                if typeGR == 1:
-                    aValue  = effAverage.mean      / effAverage.effMC
-                    anError = effAverage.systCombined / effAverage.effMC  
-                if typeGR == -1:
-                    aValue  = effAverage.effMC
-                    anError = 0#effAverage.errEffMC
+                print("ptBin", ptBin)
+                print("etaBin", etaBin)
+                if etaBin == (-1.444, 1.444):
+                    aValue = 1.0
+                    anError = 1.0
+                else: 
+                    aValue  = effAverage.mean
+                    anError = effAverage.systCombined 
+                    if typeGR == 1:
+                        aValue  = effAverage.mean      / effAverage.effMC
+                        anError = effAverage.systCombined / effAverage.effMC  
+                    if typeGR == -1:
+                        aValue  = effAverage.effMC
+                        anError = 0#effAverage.errEffMC
                     
                 listOfGraphs[ptBin].append( {'min': etaBin[0], 'max': etaBin[1],
                                              'val': aValue  , 'err': anError } )

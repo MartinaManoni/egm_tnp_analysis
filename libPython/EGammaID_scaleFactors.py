@@ -321,11 +321,11 @@ def doEGM_SFs(filein, lumi, axis = ['pT','eta'] ):
     print " ------------------------------- "
 
     customEtaBining = []
-    customEtaBining.append( (0.000,0.800))
-    customEtaBining.append( (0.800,1.444))
+    #customEtaBining.append( (0.000,0.800))
+    #customEtaBining.append( (0.800,1.444))
     customEtaBining.append( (1.444,1.566))
-    customEtaBining.append( (1.566,2.000))
-    customEtaBining.append( (2.000,2.500))
+    #customEtaBining.append( (1.566,2.000))
+    #customEtaBining.append( (2.000,2.500))
     #HZZ bins - can be deleted
     # customEtaBining.append( (0.000,0.500))
     # customEtaBining.append( (0.500,1.0))    
